@@ -1,9 +1,11 @@
 // src/components/TodoList.jsx
-import React from 'react';
+import React, {memo} from 'react';
 import TodoItem from './TodoItem';
 import styles from './TodoList.module.css'; // Импорт CSS-модуля
 
 const TodoList = ({ items, onDelete, onEdit }) => {
+  console.log('Render')
+  
   return (
     <div className={styles.todoList}>
       <h2 className={styles.title}>Список дел</h2>
@@ -21,4 +23,4 @@ const TodoList = ({ items, onDelete, onEdit }) => {
   );
 };
 
-export default TodoList;
+export default memo(TodoList);
